@@ -923,100 +923,60 @@
   ],
   "history": [
     {
-      "id": "16ed",
+      "id": "915e",
       "type": "length",
       "action": "conversion",
-      "expression": "1 m → 100 cm",
+      "expression": "100  → 100 ",
       "result": 100,
-      "timestamp": "2026-03-20T06:26:36.228Z"
+      "timestamp": "2026-03-21T09:55:49.855Z"
     },
     {
-      "id": "c88c",
+      "id": "d47d",
+      "type": "length",
+      "action": "arithmetic",
+      "expression": "11  + 11 ",
+      "result": 22,
+      "timestamp": "2026-03-21T09:56:20.307Z"
+    },
+    {
+      "id": "ded8",
       "type": "length",
       "action": "conversion",
-      "expression": "1 m → 100 cm",
+      "expression": "100  → 100 ",
       "result": 100,
-      "timestamp": "2026-03-20T06:27:29.789Z"
+      "timestamp": "2026-03-21T09:56:54.523Z"
     },
     {
-      "id": "c16c",
+      "id": "7e98",
       "type": "length",
       "action": "conversion",
-      "expression": "1 cm → 1 cm",
-      "result": 1,
-      "timestamp": "2026-03-20T06:27:36.147Z"
+      "expression": "100 m → 10000 cm",
+      "result": 10000,
+      "timestamp": "2026-03-21T10:00:54.151Z"
     },
     {
-      "id": "f00a",
+      "id": "bfad",
       "type": "length",
-      "action": "conversion",
-      "expression": "1 m → 100 cm",
+      "action": "arithmetic",
+      "expression": "1000 m + 230 m",
+      "result": 1230,
+      "timestamp": "2026-03-21T10:02:00.601Z"
+    },
+    {
+      "id": "8c5f",
+      "type": "length",
+      "action": "arithmetic",
+      "expression": "1000 km / 10 km",
       "result": 100,
-      "timestamp": "2026-03-20T06:27:39.276Z"
+      "timestamp": "2026-03-21T10:03:51.666Z"
     },
     {
-      "id": "6991",
+      "id": "9614",
       "type": "length",
-      "action": "conversion",
-      "expression": "10 m → 1000 cm",
-      "result": 1000,
-      "timestamp": "2026-03-20T06:27:58.715Z"
-    },
-    {
-      "id": "101d",
-      "type": "length",
-      "action": "conversion",
-      "expression": "10 m → 1000 cm",
-      "result": 1000,
-      "timestamp": "2026-03-20T09:01:51.488Z"
-    },
-    {
-      "id": "6bfa",
-      "type": "length",
-      "action": "conversion",
-      "expression": "10 m → 1000 cm",
-      "result": 1000,
-      "timestamp": "2026-03-20T09:01:56.706Z"
-    },
-    {
-      "id": "115a",
-      "type": "length",
-      "action": "conversion",
-      "expression": "1 cm → 1 cm",
-      "result": 1,
-      "timestamp": "2026-03-20T09:02:45.131Z"
-    },
-    {
-      "id": "4634",
-      "type": "length",
-      "action": "conversion",
-      "expression": "100000 m → 10000000 cm",
-      "result": 10000000,
-      "timestamp": "2026-03-20T09:04:49.282Z"
-    },
-    {
-      "id": "a457",
-      "type": "length",
-      "action": "conversion",
-      "expression": "10 m → 1000 cm",
-      "result": 1000,
-      "timestamp": "2026-03-20T10:23:38.209Z"
-    },
-    {
-      "id": "230b",
-      "type": "temperature",
-      "action": "conversion",
-      "expression": "0 C → 32 F",
-      "result": 32,
-      "timestamp": "2026-03-20T10:24:01.471Z"
-    },
-    {
-      "id": "726f",
-      "type": "temperature",
-      "action": "conversion",
-      "expression": "1 C → 33.8 F",
-      "result": 33.8,
-      "timestamp": "2026-03-20T10:24:27.189Z"
+      "action": "comparison",
+      "expression": "100 m is LESS than 200 m",
+      "result": null,
+      "timestamp": "2026-03-21T10:12:29.341Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
