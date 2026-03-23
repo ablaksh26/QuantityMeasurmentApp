@@ -1,110 +1,93 @@
-a<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quantity Measurment App</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <title>Quantity Measurement</title>
+    <link rel="stylesheet" href="/Frontend/css/style.css" />
   </head>
-
   <body>
     <div id="root">
-      <div class="app-scroll-wrapper">
-        <header class="main-header">
-          <h1>Welcome To Quantity Measurement</h1>
-        </header>
-        <main class="container">
-          <section class="selection-section">
-            <h2>CHOOSE TYPE</h2>
-            <div class="category-grid" id="categoryGrid">
-              <div class="category-card active" data-category="length">
-                <div class="icon-box">
-                  <img
-                    alt="Length"
-                    src="https://img.icons8.com/color/50/ruler.png"
-                  />
-                </div>
-                <span>Length</span>
-              </div>
-              <div class="category-card" data-category="weight">
-                <div class="icon-box">
-                  <img
-                    alt="Weight"
-                    src="https://img.icons8.com/color/50/scales.png"
-                  />
-                </div>
-                <span>Weight</span>
-              </div>
-              <div class="category-card" data-category="temperature">
-                <div class="icon-box">
-                  <img
-                    alt="Temperature"
-                    src="https://img.icons8.com/color/50/thermometer.png"
-                  />
-                </div>
-                <span>Temperature</span>
-              </div>
-              <div class="category-card" data-category="volume">
-                <div class="icon-box">
-                  <img
-                    alt="Volume"
-                    src="https://img.icons8.com/color/50/measuring-cup.png"
-                  />
-                </div>
-                <span>Volume</span>
-              </div>
+      <header>
+        <h1>Welcome To Quantity Measurement</h1>
+      </header>
+      <main>
+        <section>
+          <h2>CHOOSE TYPE</h2>
+          <div class="grid" id="categoryGrid">
+            <div class="card active">
+              <div class="icon"></div>
+              <span>Length</span>
             </div>
-          </section>
-          <section class="selection-section">
-            <h2>CHOOSE ACTION</h2>
-            <div class="action-tabs">
-              <button class="action-btn active">Comparison</button
-              ><button class="action-btn">Conversion</button
-              ><button class="action-btn">Arithmetic</button>
+            <div class="card">
+              <div class="icon"></div>
+              <span>Weight</span>
             </div>
-          </section>
-          <section class="conversion-section">
-            <div class="conversion-card" style="display: flex; gap: 2rem">
-              <div class="input-group" style="z-index: 20">
-                <label>FROM</label><input step="any" type="number" value="1" />
-                <div class="custom-dropdown">
-                  <div class="dropdown-header">
-                    <span>Kilometer</span><span class="arrow">▲</span>
-                  </div>
-                  <div class="dropdown-options">
-                    <div class="option-item active">Kilometer</div>
-                    <div class="option-item">Meters</div>
-                    <div class="option-item">Centimeters</div>
-                    <div class="option-item">Millimeters</div>
-                    <div class="option-item">Mile</div>
-                    <div class="option-item">Yard</div>
-                    <div class="option-item">Feet</div>
-                    <div class="option-item">Inch</div>
-                  </div>
+            <div class="card">
+              <div class="icon"></div>
+              <span>Temperature</span>
+            </div>
+            <div class="card">
+              <div class="icon"></div>
+              <span>Volume</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>CHOOSE ACTION</h2>
+          <div class="tabs">
+            <button class="btn active">Comparison</button>
+            <button class="btn">Conversion</button>
+            <button class="btn">Arithmetic</button>
+          </div>
+        </section>
+
+        <section>
+          <div class="flex">
+            <div class="group">
+              <label>FROM</label>
+              <input step="any" type="number" value="1" />
+              <div class="dropdown">
+                <div class="dropdown-head">
+                  <span>Kilometer</span><span class="arrow">▲</span>
                 </div>
-              </div>
-              <div class="input-group" style="z-index: 10">
-                <label>TO</label><input readonly="" type="text" value="1000" />
-                <div class="custom-dropdown">
-                  <div class="dropdown-header">
-                    <span>Meters</span><span class="arrow">▲</span>
-                  </div>
-                  <div class="dropdown-options">
-                    <div class="option-item">Kilometer</div>
-                    <div class="option-item active">Meters</div>
-                    <div class="option-item">Centimeters</div>
-                    <div class="option-item">Millimeters</div>
-                    <div class="option-item">Mile</div>
-                    <div class="option-item">Yard</div>
-                    <div class="option-item">Feet</div>
-                    <div class="option-item">Inch</div>
-                  </div>
+                <div class="dropdown-list">
+                  <div class="option active">Kilometer</div>
+                  <div class="option">Meters</div>
+                  <div class="option">Centimeters</div>
+                  <div class="option">Millimeters</div>
+                  <div class="option">Mile</div>
+                  <div class="option">Yard</div>
+                  <div class="option">Feet</div>
+                  <div class="option">Inch</div>
                 </div>
               </div>
             </div>
-          </section>
-        </main>
-      </div>
+            <div class="group">
+              <label>TO</label>
+              <input readonly type="text" value="1000" />
+              <div class="dropdown">
+                <div class="dropdown-head">
+                  <span>Meters</span><span class="arrow">▲</span>
+                </div>
+                <div class="dropdown-list">
+                  <div class="option">Kilometer</div>
+                  <div class="option active">Meters</div>
+                  <div class="option">Centimeters</div>
+                  <div class="option">Millimeters</div>
+                  <div class="option">Mile</div>
+                  <div class="option">Yard</div>
+                  <div class="option">Feet</div>
+                  <div class="option">Inch</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-reset">Reset</button>
+        </section>
+      </main>
     </div>
+    <script type="module" src="/Backend/app.js"></script>
   </body>
 </html>
