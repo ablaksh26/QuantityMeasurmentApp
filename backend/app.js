@@ -28,11 +28,9 @@ const baseUnits = {
 // ---------------- UC-JS-11 ----------------
 function setActive(parentEl, clickedEl, childSelector) {
   if (!parentEl) return;
-
   parentEl
     .querySelectorAll(childSelector)
     .forEach((el) => el.classList.remove("active"));
-
   clickedEl.classList.add("active");
 }
 
@@ -55,9 +53,17 @@ function showResult(value, unitSymbol = "") {
 // ✅ RESTORE RESULT EVERY TIME UI UPDATES
 function restoreResult() {
   const resultBox = document.querySelector("#comparison-result");
-  if (resultBox) {
-    resultBox.textContent = lastResult;
+  if (resultBox) resultBox.textContent = lastResult;
+}
+
+// ---------------- UC-JS-13 ----------------
+function toggleOperators(show) {
+  const operatorRow = document.querySelector(".operator-row");
+  if (!operatorRow) {
+    console.warn("Operator row element not found");
+    return;
   }
+  operatorRow.style.display = show ? "flex" : "none";
 }
 
 // ---------------- HISTORY ----------------
@@ -74,9 +80,7 @@ async function loadHistory() {
   } else {
     items.forEach((e) => {
       const div = document.createElement("div");
-      div.textContent = `${e.expression} ${
-        e.result !== null ? "= " + e.result : ""
-      }`;
+      div.textContent = `${e.expression} ${e.result !== null ? "= " + e.result : ""}`;
       container.appendChild(div);
     });
   }
@@ -87,7 +91,6 @@ async function loadHistory() {
 // ---------------- LOAD UNITS ----------------
 async function loadUnits(type) {
   let units = await getUnits(type);
-
   units = units.filter((u) => u.type === type);
 
   if (!units.length) {
@@ -101,9 +104,7 @@ async function loadUnits(type) {
 
   [fromSelect, toSelect, secondSelect].forEach((select) => {
     if (!select) return;
-
     select.innerHTML = "";
-
     units.forEach((unit) => {
       const option = document.createElement("option");
       option.value = unit.symbol;
@@ -254,8 +255,7 @@ function showErrorBanner(msg) {
 
 // ---------------- UI TOGGLE ----------------
 function toggleUI() {
-  document.querySelector(".operator-row").style.display =
-    state.action === "arithmetic" ? "flex" : "none";
+  toggleOperators(state.action === "arithmetic"); // ✅ UC-JS-13
 
   document.querySelector(".second-value").style.display =
     state.action !== "conversion" ? "block" : "none";
@@ -314,11 +314,12 @@ function attachEventListeners() {
   attachConversionListener();
 }
 
+// ---------------- INIT ----------------
 document.addEventListener("DOMContentLoaded", async () => {
   attachEventListeners();
   await loadUnits("length");
   toggleUI();
   await loadHistory();
 
-  restoreResult();
+  restoreResult(); // ✅ FINAL SAFETY
 });
